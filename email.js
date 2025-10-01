@@ -10,7 +10,7 @@ app.get("/..", (req, res) => {
 });
 app.post("/", async (req, res) => {
   const { name, email, message } = req.body;
-
+  res.send("Backend is running ✅");
   if (!name || !email || !message) {
     return res.status(400).json({ msg: "Please fill all fields" });
   }
