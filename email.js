@@ -5,10 +5,10 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.get("/hey", (req, res) => {
+app.get("/..", (req, res) => {
   console.log("hey");   
 });
-app.post("/send", async (req, res) => {
+app.post("/", async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
