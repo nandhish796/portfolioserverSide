@@ -5,12 +5,11 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.get("/..", (req, res) => {
-  console.log("hey");   
-});
-app.post("/", async (req, res) => {
-  const { name, email, message } = req.body;
+app.get("/", (req, res) => {
   res.send("Backend is running ✅");
+});
+app.post("/..", async (req, res) => {
+  const { name, email, message } = req.body;
   if (!name || !email || !message) {
     return res.status(400).json({ msg: "Please fill all fields" });
   }
